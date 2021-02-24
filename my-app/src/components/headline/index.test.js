@@ -2,8 +2,8 @@ import React from 'react';
 import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Headline from './index';
-import { findByData } from '../../../Utils';
- 
+import { findByData, checkProps } from '../../../Utils';
+
  configure({adapter : new Adapter})
 
   const setUp =(props={})=>{
@@ -13,6 +13,25 @@ import { findByData } from '../../../Utils';
 
 
 describe ("Headline Component", ()=>{
+
+    describe("Checking Proptypes", ()=>{
+        test("should not throw an error", ()=>{
+            const expectedProps = {
+                header: "Test Header",
+                description: "Test desc",
+                tempArr: [ {
+                    firstname: "Test name",
+                    lasttname: "Test last name",
+                    email: "Testname@gmail.com",
+                    age: 23,
+                    OnlineStatus: false,
+                    } ]
+            }
+
+          expect(checkProps(Headline, expectedProps)).toBeUndefined()
+        })
+    })
+
     describe('Have props', () => {
 
         let myComponent;
