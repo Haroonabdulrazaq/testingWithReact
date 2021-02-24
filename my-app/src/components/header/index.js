@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './index.scss';
+import logo from '../../assets/logo192.png';
 
 const Header = () => {
   return (
-    <div>
-      <p>Am an header</p>
+    <div className="wrapper">
+       <div className="logo">
+         <img src={logo} alt="logo" width="50" height="50"/>
+       </div>
     </div>
   )
 }
