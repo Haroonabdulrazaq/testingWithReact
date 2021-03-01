@@ -6,7 +6,7 @@ describe("Posts reducer", ()=> {
     const newState = postReducer(undefined, {}) 
     expect(newState).toEqual([])
   })
-
+ 
   it("Should return new state, if type match",()=>{
     const posts = [{title: "Test title1"},{title: "Test title2"}]
     const newState = postReducer(undefined, {
