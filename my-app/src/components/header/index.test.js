@@ -6,7 +6,7 @@ import { findByData } from '../../../Utils';
 
 configure({adapter: new Adapter() })
 
-import { shallow, mount, render } from 'enzyme';
+import { shallow} from 'enzyme';
 import { cleanup } from '@testing-library/react';
 
 const setUp =()=>{
