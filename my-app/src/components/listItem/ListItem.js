@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './list.scss'
 
 class ListItem extends Component {
   static propTypes = {
@@ -13,7 +14,7 @@ class ListItem extends Component {
       return null
     }
     return (
-      <div data-test="listItemComponent">
+      <div data-test="listItemComponent" className="list-item">
         <h3 data-test="title">{title}</h3>
         <p data-test="desc">{desc}</p>
       </div>
