@@ -6,10 +6,12 @@ import {findByData, testStore} from '../Utils';
 
 configure({ adapter: new Adapter() })
 
+// To test a connectd component 
+// Mock the store
+// and dive into the comonent using childAt(0) and dive() method see Line 14
 const setUp = (initialState={})=>{
   const store = testStore(initialState);
   const wrapper = shallow(<App store={store} />).childAt(0).dive()
-  // console.log(wrapper.debug());
   return wrapper;
 }
 

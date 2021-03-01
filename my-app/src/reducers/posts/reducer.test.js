@@ -15,4 +15,4 @@ describe("Posts reducer", ()=> {
     })
     expect(newState).toEqual(posts)
   })
-})
+}) 
