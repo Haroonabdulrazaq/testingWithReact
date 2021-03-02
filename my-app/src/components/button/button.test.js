@@ -39,7 +39,7 @@ const props = {
       expect(component.length).toBe(1)
     })
 
-    test("Should emit callback emit callback on click event",()=>{
+    test("Should emit callback on click event",()=>{
       const button  = findByData(wrapper, 'buttonComponent');
       button.simulate('click')
       const callback = mockFunc.mock.calls.length

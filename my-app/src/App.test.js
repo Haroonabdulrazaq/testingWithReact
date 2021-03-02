@@ -46,4 +46,18 @@ describe("App Component", ()=>{
 
     expect(myComponent.length).toBe(1)
   })
+
+  test("Should update state as expected",()=>{
+    const classInstance = wrapper.instance();
+    classInstance.updateBtnState()
+    const newState = classInstance.state.hideBtn;
+
+    expect(newState).toEqual(true);
+  })
+
+  test("Should fetchPost from API",()=>{
+    const classInstance = wrapper.instance()
+    const expectedBehavior = classInstance.props.fetchPosts()
+    expect(expectedBehavior).toBeTruthy()
+  })
 })

@@ -24,13 +24,23 @@ class App extends Component {
   constructor(props){
     super(props);
  
+    this.state = {
+      hideBtn: false
+    }
     this.fetch = this.fetch.bind(this);
+    this.updateState =  this.updateBtnState.bind(this);
   }
 
   fetch(){
     this.props.fetchPosts();
+    this.updateBtnState()
   }
 
+  updateBtnState(){
+    this.setState({
+      hideBtn: !this.state.hideBtn
+    })
+  }
 
   render() {
    const { posts } = this.props;
@@ -46,7 +56,7 @@ class App extends Component {
         <Header />
         <section className="main">
           <Headline header="Posts" desc="Click the button to render posts!" tempArr={tempArr} />
-          <SharedButton {...configButton} />
+          {!this.state.hideBtn && <SharedButton {...configButton} />}
           
           {posts.length > 0 &&
             <div>
